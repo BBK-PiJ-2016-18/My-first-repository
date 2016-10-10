@@ -2,14 +2,17 @@ class Point {
 double x;
 double y;
 }
+Point p1 = new Point()
 print "Enter the x-coordinate of the first point: "
 double x1 = Double.parseDouble(System.console().readLine())
 print "Enter the y-coordinate of the first point: "
 double y1 = Double.parseDouble(System.console().readLine())
+Point p1 = new Point()
 print "Enter the x-coordinate of the second point: "
 double x2 = Double.parseDouble(System.console().readLine())
 print "Enter the y-coordinate of the second point: "
 double y2 = Double.parseDouble(System.console().readLine())
+Point p1 = new Point()
 print "Enter the x-coordinate of the third point: "
 double x3 = Double.parseDouble(System.console().readLine())
 print "Enter the y-coordinate of the third point: "
