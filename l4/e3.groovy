@@ -21,13 +21,13 @@ Integer binary2decimal(String binary) {
 	return decimal
 }
 
-Integer decimal2binary (int decimal) {
+String decimal2binary (int decimal) {
 	int numerator = decimal
-	String binary = ""
+	String binary = "_"
 	while (numerator > 0) {
 		int q = numerator / 2
 		int digit = numerator % 2
-		binary = binary + digit
+		binary = digit + binary
 		numerator = q
 	}
 	return binary
@@ -50,7 +50,7 @@ while (running) {
 		case 2: print "Enter the decimal number you wish to convert: "
 		String s = System.console().readLine()
 		int decimal = Integer.parseInt(s)
-		println decimal2binary(s);
+		println decimal2binary(decimal);
 		break;
 		default: println "Invalid option. Please try again."
 	}
