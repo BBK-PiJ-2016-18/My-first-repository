@@ -20,7 +20,6 @@ Integer binary2decimal(String binary) {
 	}
 	return decimal
 }
-
 String decimal2binary (int decimal) {
 	int numerator = decimal
 	String binary = "_"

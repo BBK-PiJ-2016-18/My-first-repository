@@ -34,4 +34,5 @@ else if (distance (p1, p3) < distance (p2, p3)) {
 }
 else {
 	println "point 2 (" + p2.x + ", " + p2.y + ") and point 3 (" + p3.x + ", " + p3.y + ") are the closest"
+
 }
