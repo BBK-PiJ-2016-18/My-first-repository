@@ -2,32 +2,37 @@ class Point {
 double x;
 double y;
 }
+Integer distance (Point p1, Point p2) {
+int dist = (p1.x - p2.x) * (p1.x - p2.x) + (p1.y - p2.y) * (p1.y - p2.y)
+return dist;
+}
+Point p1 = new Point ()
 print "Enter the x-coordinate of the first point: "
-double x1 = Double.parseDouble(System.console().readLine())
+p1.x = Double.parseDouble(System.console().readLine())
 print "Enter the y-coordinate of the first point: "
-double y1 = Double.parseDouble(System.console().readLine())
+p1.y = Double.parseDouble(System.console().readLine())
+Point p2 = new Point ()
 print "Enter the x-coordinate of the second point: "
-double x2 = Double.parseDouble(System.console().readLine())
+p2.x = Double.parseDouble(System.console().readLine())
 print "Enter the y-coordinate of the second point: "
-double y2 = Double.parseDouble(System.console().readLine())
+p2.y = Double.parseDouble(System.console().readLine())
+Point p3 = new Point ()
 print "Enter the x-coordinate of the third point: "
-double x3 = Double.parseDouble(System.console().readLine())
+p3.x = Double.parseDouble(System.console().readLine())
 print "Enter the y-coordinate of the third point: "
-double y3 = Double.parseDouble(System.console().readLine())
-double p1p2_dist = (x1 - x2) * (x1 - x2) + (y1 - y2) * (y1 - y2)
-double p1p3_dist = (x1 - x3) * (x1 - x3) + (y1 - y3) * (y1 - y3)
-double p2p3_dist = (x2 - x3) * (x2 - x3) + (y2 - y3) * (y2 - y3)
-if (p1p2_dist < p1p3_dist) {
-	if (p1p2_dist < p2p3_dist) {
-		println "point 1 (" + x1 + ", " + y1 + ") and point 2 (" + x2 + ", " + y2 + ") are the closest"
+p3.y = Double.parseDouble(System.console().readLine())
+if (distance (p1, p2) < distance (p1, p3)) {
+	if (distance (p1, p2) < distance (p2, p3)) {
+		println "point 1 (" + p1.x + ", " + p1.y + ") and point 2 (" + p2.x + ", " + p2.y + ") are the closest"
 	}
 	else {
-		println "point 2 (" + x2 + ", " + y2 + ") and point 3 (" + x3 + ", " + y3 + ") are the closest"
+		println "point 2 (" + p2.x + ", " + p2.y + ") and point 3 (" + p3.x + ", " + p3.y + ") are the closest"
 	}
 }
-else if (p1p3_dist < p2p3_dist) {
-	println "point 1 (" + x1 + ", " + y1 + ") and point 3 (" + x3 + ", " + y3 + ") are the closest"
+else if (distance (p1, p3) < distance (p2, p3)) {
+	println "point 1 (" + p1.x + ", " + p1.y + ") and point 3 (" + p3.x + ", " + p3.y + ") are the closest"
 }
 else {
-	println "point 2 (" + x2 + ", " + y2 + ") and point 3 (" + x3 + ", " + y3 + ") are the closest"
+	println "point 2 (" + p2.x + ", " + p2.y + ") and point 3 (" + p3.x + ", " + p3.y + ") are the closest"
+
 }
