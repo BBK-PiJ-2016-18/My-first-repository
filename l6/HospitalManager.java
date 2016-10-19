@@ -4,7 +4,7 @@ public class HospitalManager {
 	public void addPatient (Patient newPatient){
 		Patient current = this.firstPatient;
 		if (firstPatient == null) {
-			this.firstPatient = current;
+			this.firstPatient = newPatient;
 		}
 		else {
 			while (current.getNextPatient() != null){
@@ -21,6 +21,9 @@ public class HospitalManager {
 				System.out.println(current.getName());
 				current = current.getNextPatient();
 			}
+		}
+		else {
+			System.out.println("Null");
 		}
 	}
 }

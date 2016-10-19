@@ -1,7 +1,8 @@
 Integer power(int b, int e) {
-	int product
-	for (int i = 0; i < e; i++) {
-	product = product * b}
+	int product = 1
+	for (int i = 1; i <= e; i++) {
+		product = product * b
+	}
 	return product
 }
 
@@ -11,22 +12,21 @@ Integer power2(int e) {
 }
 
 Integer binary2decimal(String binary) {
-	int decimal
+	int decimal = 0
 	for (int i = 0; i < binary.length(); i++) {
 		int j = binary.length() - 1 - i
-		int digit = Integer.parseInt(binary.substring(j))
+		int digit = Integer.parseInt(binary.substring(j, j + 1))
 		decimal = decimal + digit * power2(i)
 	}
 	return decimal
 }
-
-Integer decimal2binary (int decimal) {
+String decimal2binary (int decimal) {
 	int numerator = decimal
-	String binary = ""
+	String binary = "_"
 	while (numerator > 0) {
 		int q = numerator / 2
 		int digit = numerator % 2
-		binary = binary + digit
+		binary = digit + binary
 		numerator = q
 	}
 	return binary
@@ -46,10 +46,10 @@ while (running) {
 		String s = System.console().readLine()
 		println binary2decimal(s);
 		break;
-		case 2: print "Enter the binary number you wish to convert: "
+		case 2: print "Enter the decimal number you wish to convert: "
 		String s = System.console().readLine()
 		int decimal = Integer.parseInt(s)
-		println decimal2binary(s);
+		println decimal2binary(decimal);
 		break;
 		default: println "Invalid option. Please try again."
 	}
