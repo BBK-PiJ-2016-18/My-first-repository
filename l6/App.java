@@ -23,6 +23,7 @@ public class App {
 		
 		manager.deletePatient ("Jules");
 		manager.deletePatient ("Maria");
+		manager.deletePatient ("Robert");
 		
 		manager.printPatients();
 	}
