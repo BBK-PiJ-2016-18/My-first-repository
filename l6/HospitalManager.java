@@ -21,6 +21,7 @@ public class HospitalManager {
 				System.out.println(current.getName());
 				current = current.getNextPatient();
 			}
+			System.out.println(current.getName());
 		}
 		else {
 			System.out.println("Null");
