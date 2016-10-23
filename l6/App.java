@@ -19,5 +19,11 @@ public class App {
 		manager.addPatient( new Patient("Arnold", 11, "Fever"));
 		
 		manager.printPatients();
+		System.out.println("");
+		
+		manager.deletePatient ("Jules");
+		manager.deletePatient ("Maria");
+		
+		manager.printPatients();
 	}
 }
