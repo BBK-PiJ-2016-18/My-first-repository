@@ -1,4 +1,5 @@
 class Patient {
+	private static int patientCount = 0;
 	private String name;
 	private int age;
 	private String illness;
@@ -9,6 +10,7 @@ class Patient {
 		this.age = age;
 		this.illness = illness;
 		this.nextPatient = null;
+		patientCount++;
 	}
 	
 	public Patient getNextPatient() {
@@ -20,5 +22,9 @@ class Patient {
 	
 	public String getName() {
 		return this.name;
+	}
+	
+	public static int getNumberOfPatients() {
+			return patientCount;
 	}
 }

@@ -26,8 +26,9 @@ public class HospitalManager {
 		else {
 			System.out.println("Null");
 		}
+		System.out.println("There are " + Patient.getNumberOfPatients() + " patients");
 	}
-	
+		
 	public boolean deletePatient(String name) {
 	if (firstPatient == null) {
 	// list is empty, nothing to remove
