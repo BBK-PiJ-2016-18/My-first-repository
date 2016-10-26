@@ -11,12 +11,14 @@ public class MobilePhone extends OldPhone {
 			System.out.println("Alarm not ringing.");
 		}
 	}
-	public void PlayGame (String gameName) {
-		System.out.println("Now playing" + gameName);
+	public void playGame () {
+		System.out.print("Select a game to play: ");
+		System.out.println("Now playing " + System.console().readLine());
 	}
 	public void printLastNumbers() {
-		for(int i = 0; i < this.indexOfLastNumberDialled; i++)
+		for(int i = 0; i < this.indexOfLastNumberDialled - 1; i++) {
 			System.out.print(this.getNumberFromTheList(i) + ", ");
-		//System.out.println("None yet");
+		}
+		System.out.println(this.getNumberFromTheList(indexOfLastNumberDialled - 1));
 	}
 }
