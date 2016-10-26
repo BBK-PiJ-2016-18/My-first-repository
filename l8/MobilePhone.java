@@ -15,6 +15,8 @@ public class MobilePhone extends OldPhone {
 		System.out.println("Now playing" + gameName);
 	}
 	public void printLastNumbers() {
-		System.out.println("None yet");
+		for(int i = 0; i < this.indexOfLastNumberDialled; i++)
+			System.out.print(this.getNumberFromTheList(i) + ", ");
+		//System.out.println("None yet");
 	}
 }
