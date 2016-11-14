@@ -5,7 +5,7 @@ public class PersonTest {
 	@Test
 	public void testsNormalName() {
 		Person p = new Person();
-		String input = "Donald  John  Trump";
+		String input = "Donald John Trump";
 		String output = p.getInitials(input);
 		String expected = "DJT";
 		assertEquals(output, expected);
