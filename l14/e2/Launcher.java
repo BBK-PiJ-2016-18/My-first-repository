@@ -1,14 +1,20 @@
 public class Launcher {
 	public static void main (String[] args) {
 		FibCalc myCalc = new FibCalc();
+		FibCalcLong longCalc = new FibCalcLong();
 		SlowCalc slow = new SlowCalc();
 		slow.getFibRec(40);
-		slow.getFibRec(45);
-		System.out.println("F(40) = " + myCalc.fib(40));
-		System.out.println("F(41) = " + myCalc.fib(41));
-		System.out.println("F(42) = " + myCalc.fib(42));
-		System.out.println("F(43) = " + myCalc.fib(43));
-		System.out.println("F(44) = " + myCalc.fib(44));
-		System.out.println("F(45) = " + myCalc.fib(45));
+		// slow.getFibRec(45);
+		myCalc.printFib(40);
+		myCalc.printFib(45);
+		myCalc.printFib(46);
+		myCalc.printFib(47);
+		longCalc.printFib(47);
+		longCalc.printFib(90);
+		longCalc.printFib(91);
+		longCalc.printFib(92);
+		longCalc.printFib(93);
+		longCalc.printFib(94);
+		
 	}
 }
