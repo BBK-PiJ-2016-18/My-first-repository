@@ -1,11 +1,11 @@
 import java.util.concurrent.Executor;
-import java.util.concurrent.ScheduledThreadPoolExecutor;
+//import java.util.concurrent.ScheduledThreadPoolExecutor;
 
-public class TextLoopModified implements Runnable { 
+public class TextLoopWithMyExecutor implements Runnable { 
     public static final int COUNT = 10;
     private final String name;
     
-    public TextLoopModified(String name) { 
+    public TextLoopWithMyExecutor(String name) { 
         this.name = name;
     }
     
@@ -34,13 +34,13 @@ public class TextLoopModified implements Runnable {
 			System.out.println(" mode 1: with threads");
 		} else if (args[0].equals("0")) {
 			for (int i = 0; i < 10; i++) {
-				Runnable r = new TextLoopModified("Thread " + i);
+				Runnable r = new TextLoopWithMyExecutor("Thread " + i);
 				r.run();
 			}
 		} else {
-			 Executor e = new ScheduledThreadPoolExecutor(10);
+			 Executor e = new ExecutorImpl();
              for (int i = 0; i < 10; i++) {
-                Runnable r = new TextLoopModified("Thread " + i);
+                Runnable r = new TextLoopWithMyExecutor("Thread " + i);
 				System.out.println("Launching task " + i);
                 e.execute(r);
 			}
