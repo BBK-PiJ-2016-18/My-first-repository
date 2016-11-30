@@ -13,7 +13,5 @@ public class ExecutorImpl implements Executor {
 	public int getMaxPendingTime() {
 		int time = 1000 * queue.size();
 		return time;
-	}
-	
-	
+	}	
 }
