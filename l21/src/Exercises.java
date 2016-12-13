@@ -1,8 +1,6 @@
-package java8.lambdahol;
 
 /*
- * For each exercise, develop a solution using Java SE 8 Lambda/Streams
- * and remove the @Ignore tag.
+ * For each exercise, develop a solution using Java SE 8 Lambda/Streams and remove the @Ignore tag.
  */
 
 import org.junit.After;
@@ -18,6 +16,7 @@ import java.nio.file.Paths;
 import java.util.Arrays;
 import java.util.List;
 import java.util.Map;
+import java.util.stream.Collectors;
 
 import static org.junit.Assert.assertEquals;
 import static org.junit.Assert.assertFalse;
@@ -27,14 +26,13 @@ public class Exercises {
     @Before
     public void setUpBufferedReader() throws IOException {
         reader = Files.newBufferedReader(
-                Paths.get("SonnetI.txt"), StandardCharsets.UTF_8); //Semicolon added to make javac work
+                Paths.get("SonnetI.txt"), StandardCharsets.UTF_8);
+	}
 
-    @After
-    public void closeBufferedReader() throws IOException {
+	@After
+	public void closeBufferedReader() throws IOException {
         reader.close();
     }
-    }
-
 
     static final String REGEXP = "\\W+"; // for splitting into words
 
@@ -49,22 +47,16 @@ public class Exercises {
 
     @Test
     public void printAllWords() {
-        /* TODO */
-
-        // We will give you this one to show you the "style"
-        // wordList.forEach(System.out::println);
-
-        // no assertions
+        wordList.forEach(System.out::println);
     }
 
     // Exercise 2: Convert all words in wordList to upper case,
     // and gather the result into an output list.
 
     @Test
-    @Ignore
     public void upperCaseWords() {
-        List<String> output = null; /* TODO */
-
+        List<String> output = wordList.stream().map(s -> s.toUpperCase()).collect(Collectors.toList()); // equivalent to
+                                // Equivalent to .map(String::toUpperCase)
         assertEquals(
                 Arrays.asList(
                         "EVERY", "PROBLEM", "IN", "COMPUTER", "SCIENCE",
@@ -80,7 +72,7 @@ public class Exercises {
     @Test
     @Ignore
     public void findEvenLengthWords() {
-        List<String> output = null; /* TODO */
+        List<String> output = wordList.stream().filter(words -> (words.length() % 2) == 0).collect(Collectors.toList());
 
         assertEquals(
                 Arrays.asList(
@@ -95,10 +87,9 @@ public class Exercises {
     // located at the root of this NetBeans project.
 
     @Test
-    @Ignore
     public void countLinesInFile() throws IOException {
-        long count = 0L; /* TODO */
-
+        long count = 0L;
+        count = reader.lines().count();
         assertEquals(14, count);
     }
 
