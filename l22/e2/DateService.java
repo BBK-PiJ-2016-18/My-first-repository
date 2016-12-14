@@ -1,5 +1,8 @@
 import java.rmi.Remote;
 import java.rmi.RemoteException;
+import java.util.GregorianCalendar;
+import java.util.Date;
+import java.util.Locale;
 
 public interface DateService extends Remote {
 	/**
@@ -7,5 +10,5 @@ public interface DateService extends Remote {
 	* @param s a string
 	* @return the same string passed as parameter
 	*/
-	public String echo(String s) throws RemoteException;
+	public static String dateTime(GregorianCalendar calendar) throws RemoteException;
 }

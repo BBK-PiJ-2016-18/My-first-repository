@@ -4,6 +4,8 @@ import java.rmi.NotBoundException;
 import java.net.MalformedURLException;
 import java.rmi.Naming;
 import java.rmi.registry.LocateRegistry;
+import java.util.GregorianCalendar;
+import java.util.Date;
 
 public class DateServer extends UnicastRemoteObject implements DateService {
 	public DateServer() throws RemoteException {
@@ -12,10 +14,9 @@ public class DateServer extends UnicastRemoteObject implements DateService {
 	}
 	
 	@Override
-	public String echo(String s) {
+	public static String dateTime(GregorianCalendar calendar) {
 		// This println() is not necessary, but helps verifying whether
 		// the server has received the call or not on the remote machine
-		System.out.println("Replied to some client saying ’" + s + "’");
-		return s;
+		return calendar.toString();
 	}
 }
