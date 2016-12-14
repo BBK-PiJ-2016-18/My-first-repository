@@ -1,4 +1,14 @@
+import java.rmi.RemoteException;
+import java.rmi.NotBoundException;
+import java.net.MalformedURLException;
+import java.rmi.Naming;
+import java.rmi.registry.LocateRegistry;
+
 public class EchoServerLauncher {
+	public static void main(String[] args) {
+		EchoServerLauncher server = new EchoServerLauncher();
+		server.launch();
+	}
 	private void launch() {
 		try {
 			// 1. Create the registry if there is not one
@@ -15,6 +25,8 @@ public class EchoServerLauncher {
 			ex.printStackTrace();
 		} catch (RemoteException ex) {
 			ex.printStackTrace();
-		}
+		} /**catch (NotBoundException ex) {
+			ex.printStackTrace();
+		}*/
 	}
 }
