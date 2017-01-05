@@ -10,4 +10,11 @@ public class ContactManagerTest {
 		testManager = new ContactManagerImpl();
 	}
 	
+	// test
+	@Test
+	public void testsMaxID() {	
+		int testMaxID = testManager.maxID;
+		assertEquals(testMaxID, 0);		
+	}
+	
 }
