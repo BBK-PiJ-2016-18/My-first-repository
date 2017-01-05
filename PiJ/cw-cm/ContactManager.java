@@ -9,14 +9,12 @@ public interface ContactManager {
     /**
      * Add a new meeting to be held in the future.
      * 
-     * An ID is returned when the meeting is put into the system. This
-     * ID must be positive and non-zero.
+     * An ID is returned when the meeting is put into the system. This ID must be positive and non-zero.
      *
      * @param contacts a set of contacts that will participate in the meeting
      * @param date the date on which the meeting will take place
      * @return the ID for the meeting
-     * @throws IllegalArgumentException if the meeting is set for a time 
-     *       in the past, of if any contact is unknown / non-existent.
+     * @throws IllegalArgumentException if the meeting is set for a time in the past, of if any contact is unknown / non-existent.
      * @throws NullPointerException if the meeting or the date are null
     */
     int addFutureMeeting(Set<Contact> contacts, Calendar date);
@@ -54,9 +52,7 @@ public interface ContactManager {
     /**
      * Returns the list of future meetings scheduled with this contact.
      *
-     * If there are none, the returned list will be empty. Otherwise,
-     * the list will be chronologically sorted and will not contain any
-     * duplicates.
+     * If there are none, the returned list will be empty. Otherwise, the list will be chronologically sorted and will not contain any duplicates.
      *
      * @param contact one of the user’s contacts
      * @return the list of future meeting(s) scheduled with this contact (maybe empty).
@@ -66,12 +62,9 @@ public interface ContactManager {
     List<Meeting> getFutureMeetingList(Contact contact);
 
     /**
-     * Returns the list of meetings that are scheduled for, or that took
-     * place on, the specified date
+     * Returns the list of meetings that are scheduled for, or that took place on, the specified date
      *
-     * If there are none, the returned list will be empty. Otherwise,
-     * the list will be chronologically sorted and will not contain any
-     * duplicates.
+     * If there are none, the returned list will be empty. Otherwise, the list will be chronologically sorted and will not contain any duplicates.
      *
      * @param date the date
      * @return the list of meetings
@@ -82,9 +75,7 @@ public interface ContactManager {
     /**
      * Returns the list of past meetings in which this contact has participated.
      *
-     * If there are none, the returned list will be empty. Otherwise,
-     * the list will be chronologically sorted and will not contain any
-     * duplicates.
+     * If there are none, the returned list will be empty. Otherwise, the list will be chronologically sorted and will not contain any duplicates.
      *
      * @param contact one of the user’s contacts
      * @return the list of future meeting(s) scheduled with this contact (maybe empty).
@@ -100,9 +91,7 @@ public interface ContactManager {
      * @param date the date on which the meeting took place
      * @param text messages to be added about the meeting.
      * @return the ID for the meeting
-     * @throws IllegalArgumentException if the list of contacts is
-     *     empty, if any of the contacts does not exist, or if
-     *     the date provided is in the future
+     * @throws IllegalArgumentException if the list of contacts is empty, if any of the contacts does not exist, or if the date provided is in the future
      * @throws NullPointerException if any of the arguments is null
      */
     int addNewPastMeeting(Set<Contact> contacts, Calendar date, String text);
@@ -137,8 +126,7 @@ public interface ContactManager {
     /**
      * Returns a set with the contacts whose name contains that string.
      * 
-     * If the string is the empty string, this methods returns the set 
-     * that contains all current contacts. 
+     * If the string is the empty string, this methods returns the set  that contains all current contacts. 
      *
      * @param name the string to search for
      * @return a set with the contacts whose name contains that string.
@@ -152,16 +140,14 @@ public interface ContactManager {
      *
      * @param ids an arbitrary number of contact IDs
      * @return a set containing the contacts that correspond to the IDs.
-     * @throws IllegalArgumentException if no IDs are provided or if 
-     *     any of the provided IDs does not correspond to a real contact
+     * @throws IllegalArgumentException if no IDs are provided or if  any of the provided IDs does not correspond to a real contact
      */
     Set<Contact> getContacts(int... ids);
 
     /**
      * Save all data to disk.
      *
-     * This method must be executed when the program is
-     * closed and when/if the user requests it.
+     * This method must be executed when the program is closed and when/if the user requests it.
      */
     void flush();
 }
