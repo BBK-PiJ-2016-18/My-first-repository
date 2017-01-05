@@ -2,6 +2,12 @@ import org.junit.*;
 import static org.junit.Assert.*;
 
 public class ContactManagerTest {
-	private ContactManagerImpl testManager;
+	private ContactManager testManager;
+	
+	//setup
+	@Before
+	public void setUp() {
+		testManager = new ContactManagerImpl();
+	}
 	
 }
