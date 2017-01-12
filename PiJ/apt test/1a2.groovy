@@ -1,1 +1,0 @@
-print "History, Dickory, Dock"

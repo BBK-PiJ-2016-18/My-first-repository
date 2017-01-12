@@ -1,2 +1,0 @@
-String str =" "
-println str
